@@ -9,9 +9,8 @@ function longestCommonPrefix(strs: string[]): string {
   for (let i = 0; i < strs[0].length; i++) {
     let flag = true
     strs.forEach(str => {
-      if (str[i] !== strs[0][i]) {
+      if (str[i] !== strs[0][i])
         flag = false
-      }
     })
     if (!flag) {
       return strs[0].slice(0, i)
