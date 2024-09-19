@@ -79,6 +79,7 @@
 class MyQueue {
   private stack1: number[];
   private stack2: number[];
+
   constructor() {
     this.stack1 = [];
     this.stack2 = [];
