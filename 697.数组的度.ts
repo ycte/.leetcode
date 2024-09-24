@@ -59,6 +59,7 @@ function findShortestSubArray(nums: number[]): number {
   for (let i = 0; i < nums.length; i++) {
     if (!map.has(nums[i])) {
       map.set(nums[i], [1, i, i]);
+      max = Math.max(max, 1);
     } else {
       const arr = map.get(nums[i])!;
       arr[0]++;
@@ -68,10 +69,14 @@ function findShortestSubArray(nums: number[]): number {
   }
   let res = nums.length;
   for (const [count, left, right] of map.values()) {
+    // console.log("🚀 ~ findShortestSubArray ~ map:", map, right, left)
     if (count === max) {
       res = Math.min(res, right - left + 1);
     }
   }
   return res;
 };
+
 // @lc code=end
+
+// console.log("🚀 ~ findShortestSubArray:", findShortestSubArray([2,1]))
